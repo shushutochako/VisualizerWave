@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="coN-tG-tNW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="VisualizerSample02" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-rP-yxv">
+                                <rect key="frame" x="250" y="275" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HEf-OE-pPN"/>
+                                    <constraint firstAttribute="width" constant="100" id="mG6-dP-krk"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BRM-CQ-kvW" kind="show" id="5KU-Nw-WQb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ6-bo-igT">
+                                <rect key="frame" x="100" y="345" width="400" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Hg6-0A-Qt1" kind="show" id="YJL-2Q-lP5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rcd-rP-yxv" secondAttribute="centerX" id="1ru-1R-o7f"/>
+                            <constraint firstAttribute="trailing" secondItem="uZ6-bo-igT" secondAttribute="trailing" constant="100" id="5M7-YX-x60"/>
+                            <constraint firstAttribute="centerY" secondItem="Rcd-rP-yxv" secondAttribute="centerY" id="Hvb-cq-oPr"/>
+                            <constraint firstItem="uZ6-bo-igT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="100" id="Qtw-61-upz"/>
+                            <constraint firstItem="uZ6-bo-igT" firstAttribute="top" secondItem="Rcd-rP-yxv" secondAttribute="bottom" constant="20" id="rm3-Dv-3H3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Df1-gr-BcQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="339"/>
+        </scene>
+        <!--Visualizer View Controller-->
+        <scene sceneID="zwe-3F-kjh">
+            <objects>
+                <viewController id="Hg6-0A-Qt1" customClass="VisualizerViewController" customModule="VisualizerSample02" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mP-HK-JdA"/>
+                        <viewControllerLayoutGuide type="bottom" id="kO3-77-NOs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ss6-06-b7L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuF-J3-iuA" customClass="WaveformView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="364" width="600" height="236"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EuF-J3-iuA" firstAttribute="top" secondItem="7mP-HK-JdA" secondAttribute="bottom" constant="300" id="Ei7-tN-cYS"/>
+                            <constraint firstAttribute="trailing" secondItem="EuF-J3-iuA" secondAttribute="trailing" id="Mmj-IR-Oe3"/>
+                            <constraint firstAttribute="bottom" secondItem="EuF-J3-iuA" secondAttribute="bottom" id="njE-jD-6B7"/>
+                            <constraint firstItem="EuF-J3-iuA" firstAttribute="leading" secondItem="ss6-06-b7L" secondAttribute="leading" id="zEb-fM-ho5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="waveformView" destination="EuF-J3-iuA" id="xkr-tA-thh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4z1-r0-qL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="1014"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bQE-kg-Xqg">
+            <objects>
+                <viewController id="BRM-CQ-kvW" customClass="SCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XDv-Lp-Zvr"/>
+                        <viewControllerLayoutGuide type="bottom" id="UsA-zq-cbc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f2d-vf-dyI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao9-hY-2hq" customClass="SCSiriWaveformView">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuL-dU-bLJ" customClass="SCSiriWaveformView">
+                                <rect key="frame" x="0.0" y="304" width="600" height="296"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EuL-dU-bLJ" secondAttribute="trailing" id="7iO-E5-ctu"/>
+                            <constraint firstItem="UsA-zq-cbc" firstAttribute="top" secondItem="EuL-dU-bLJ" secondAttribute="bottom" id="88n-RC-occ"/>
+                            <constraint firstItem="EuL-dU-bLJ" firstAttribute="top" secondItem="XDv-Lp-Zvr" secondAttribute="bottom" constant="240" id="94J-vh-DEd"/>
+                            <constraint firstAttribute="trailing" secondItem="ao9-hY-2hq" secondAttribute="trailing" id="9UM-Aq-dpH"/>
+                            <constraint firstItem="ao9-hY-2hq" firstAttribute="leading" secondItem="f2d-vf-dyI" secondAttribute="leading" id="n95-sX-RMp"/>
+                            <constraint firstItem="EuL-dU-bLJ" firstAttribute="leading" secondItem="f2d-vf-dyI" secondAttribute="leading" id="stP-Aa-Czs"/>
+                            <constraint firstItem="ao9-hY-2hq" firstAttribute="top" secondItem="f2d-vf-dyI" secondAttribute="top" constant="300" id="wOa-3W-KYE"/>
+                            <constraint firstItem="UsA-zq-cbc" firstAttribute="top" secondItem="ao9-hY-2hq" secondAttribute="bottom" id="y1L-K8-xn1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="waveformView" destination="ao9-hY-2hq" id="Ane-S1-6TO"/>
+                        <outlet property="waveformView2" destination="EuL-dU-bLJ" id="E6b-oc-WTy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otr-xt-r7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JzL-5b-R8A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coN-tG-tNW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ej4-R3-LSh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="cQz-uW-pXR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hI8-Y4-jLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="-354"/>
+        </scene>
+    </scenes>
+</document>
