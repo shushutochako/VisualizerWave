@@ -36,7 +36,7 @@ class WaveformView: UIView {
   var phaseShift: CGFloat = -0.15
   
   /*
-  * 振幅の掛け率
+  * 振幅の掛け率(大きくすると反応しやすくなる)
   */
   var amplitudeRate: CGFloat = 1.0
   
@@ -67,7 +67,7 @@ class WaveformView: UIView {
     if level < self.idleAmplitude {
       self.amplitude = self.idleAmplitude
     } else {
-      self.amplitude = level * self.amplitudeRate
+      self.amplitude = min(1,level * self.amplitudeRate)
     }
     self.setNeedsDisplay()
   }
@@ -94,6 +94,7 @@ class WaveformView: UIView {
       let scaling: CGFloat = -pow(1 / mid * (x - mid), 2) + 1
       // 波の振幅
       let amplitude = scaling * maxAmplitude * self.amplitude
+      //println(self.amplitude)
       // 波を繰り返す周期
       let cycle = Float(CGFloat(2 * M_PI) * (x / width) * self.frequency + self.phase)
       

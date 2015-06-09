@@ -21,12 +21,12 @@ class VisualizerViewController: UIViewController {
     
     self.waveformView.frequency = 2
     self.waveformView.waveColor = UIColor(red: 253/255, green: 181/255, blue: 44/255, alpha: 1)
-    self.waveformView.amplitudeRate = 2
+    self.waveformView.amplitudeRate = 1.5
     
     self.frontWaveformView.alpha = 0.5
     self.frontWaveformView.frequency = 1
     self.frontWaveformView.waveColor = UIColor(red: 255/255, green: 120/255, blue: 230/255, alpha: 1)
-    self.frontWaveformView.amplitudeRate = 2
+    self.frontWaveformView.amplitudeRate = 1.5
     
     self.start()
   }
