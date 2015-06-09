@@ -54,7 +54,7 @@ class WaveformView: UIView {
   }
   
   private func setup() {
-    self.waveColor = UIColor.blueColor()
+    self.waveColor = UIColor.whiteColor()
   }
   
   func update(level: CGFloat) {
@@ -64,6 +64,7 @@ class WaveformView: UIView {
     }
     self.phase += self.phaseShift
     
+    // 反応しやすくするためにamplitudeRateを掛ける
     if level < self.idleAmplitude {
       self.amplitude = self.idleAmplitude
     } else {
@@ -94,8 +95,6 @@ class WaveformView: UIView {
       let scaling: CGFloat = -pow(1 / mid * (x - mid), 2) + 1
       // 波の振幅
       let amplitude = scaling * maxAmplitude * self.amplitude
-      //println(self.amplitude)
-      // 波を繰り返す周期
       let cycle = Float(CGFloat(2 * M_PI) * (x / width) * self.frequency + self.phase)
       
       let y = amplitude * CGFloat(sinf(cycle)) + halfHeight
@@ -106,7 +105,6 @@ class WaveformView: UIView {
         // 波を描画する為のポイント追加
         CGContextAddLineToPoint(context, x, y);
       }
-      
     }
     // 塗り潰し範囲確定の為のポイント追加
     CGContextAddLineToPoint(context, self.frame.size.width, halfHeight)
@@ -116,10 +114,5 @@ class WaveformView: UIView {
     
     CGContextFillPath(context);
   }
-  
-  private func getYPoint() {
-    
-  }
-
   
 }
