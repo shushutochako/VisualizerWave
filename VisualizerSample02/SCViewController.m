@@ -70,15 +70,8 @@ typedef NS_ENUM(NSUInteger, SCSiriWaveformViewInputType) {
     [self.waveformView setPrimaryWaveLineWidth:3.0f];
     [self.waveformView setSecondaryWaveLineWidth:1.0];
     [self.waveformView setFrequency:2.0];
-    
-    [self.waveformView2 setWaveColor:[UIColor colorWithRed:255/255 green:0/255 blue:255/255 alpha:1]];
-    [self.waveformView2 setPrimaryWaveLineWidth:3.0f];
-    [self.waveformView2 setSecondaryWaveLineWidth:1.0];
-    [self.waveformView2 setFrequency:1];
 
-
-	
-	[self setSelectedInputType:SCSiriWaveformViewInputTypeRecorder];
+    [self setSelectedInputType:SCSiriWaveformViewInputTypeRecorder];
 }
 
 - (void)setSelectedInputType:(SCSiriWaveformViewInputType)selectedInputType
@@ -125,10 +118,8 @@ typedef NS_ENUM(NSUInteger, SCSiriWaveformViewInputType) {
 			break;
 		}
 	}
-    NSLog(@"%f",normalizedValue);
-    CGFloat value = normalizedValue * 3;
-    [self.waveformView updateWithLevel:value * value];
-    [self.waveformView2 updateWithLevel:normalizedValue];
+  [self.waveformView updateWithLevel:normalizedValue];
+  [self.waveformView2 updateWithLevel:normalizedValue];
 }
 
 @end

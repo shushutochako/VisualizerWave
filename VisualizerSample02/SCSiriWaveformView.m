@@ -11,7 +11,7 @@
 static const CGFloat kDefaultFrequency          = 1.5f;
 static const CGFloat kDefaultAmplitude          = 1.0f;
 static const CGFloat kDefaultIdleAmplitude      = 0.01f;
-static const CGFloat kDefaultNumberOfWaves      = 1.0f;
+static const CGFloat kDefaultNumberOfWaves      = 3.0f;
 static const CGFloat kDefaultPhaseShift         = -0.15f;
 static const CGFloat kDefaultDensity            = 5.0f;
 static const CGFloat kDefaultPrimaryLineWidth   = 3.0f;
@@ -105,16 +105,12 @@ static const CGFloat kDefaultSecondaryLineWidth = 1.0f;
 			
 			if (x == 0) {
 				CGContextMoveToPoint(context, x, y);
-                // お試し
-                CGContextAddLineToPoint(context, self.frame.size.width + 200, y);
-                CGContextAddLineToPoint(context, 0, 500);
 			} else {
 				CGContextAddLineToPoint(context, x, y);
 			}
 		}
 		
-		//CGContextStrokePath(context);
-        CGContextFillPath(context);
+		CGContextStrokePath(context);
 	}
 }
 

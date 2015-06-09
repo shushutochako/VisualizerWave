@@ -11,11 +11,23 @@ import UIKit
 class VisualizerViewController: UIViewController {
 
   @IBOutlet weak var waveformView: WaveformView!
+  @IBOutlet weak var frontWaveformView: WaveformView!
+
   var audioInput = AudioInput()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.audioInput.delegate = self
+    
+    self.waveformView.frequency = 2
+    self.waveformView.waveColor = UIColor(red: 253/255, green: 181/255, blue: 44/255, alpha: 1)
+    self.waveformView.amplitudeRate = 2
+    
+    self.frontWaveformView.alpha = 0.5
+    self.frontWaveformView.frequency = 1
+    self.frontWaveformView.waveColor = UIColor(red: 255/255, green: 120/255, blue: 230/255, alpha: 1)
+    self.frontWaveformView.amplitudeRate = 2
+    
     self.start()
   }
   func start() {
@@ -25,7 +37,7 @@ class VisualizerViewController: UIViewController {
 
 extension VisualizerViewController : AudioInputDelegate {
   func onInputAudio(level: Float) {
-    println(level)
     self.waveformView.update(CGFloat(level))
+    self.frontWaveformView.update(CGFloat(level))
   }
 }

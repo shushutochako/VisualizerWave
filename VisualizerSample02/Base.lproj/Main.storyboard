@@ -71,16 +71,25 @@
                                 <rect key="frame" x="0.0" y="364" width="600" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-vd-eyB" customClass="WaveformView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="364" width="600" height="236"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tCg-vd-eyB" firstAttribute="top" secondItem="7mP-HK-JdA" secondAttribute="bottom" constant="300" id="3tN-rY-jl2"/>
+                            <constraint firstItem="tCg-vd-eyB" firstAttribute="leading" secondItem="ss6-06-b7L" secondAttribute="leading" id="5Dr-Vf-wF9"/>
                             <constraint firstItem="EuF-J3-iuA" firstAttribute="top" secondItem="7mP-HK-JdA" secondAttribute="bottom" constant="300" id="Ei7-tN-cYS"/>
                             <constraint firstAttribute="trailing" secondItem="EuF-J3-iuA" secondAttribute="trailing" id="Mmj-IR-Oe3"/>
                             <constraint firstAttribute="bottom" secondItem="EuF-J3-iuA" secondAttribute="bottom" id="njE-jD-6B7"/>
+                            <constraint firstAttribute="trailing" secondItem="tCg-vd-eyB" secondAttribute="trailing" id="pFl-ZL-XEe"/>
+                            <constraint firstItem="kO3-77-NOs" firstAttribute="top" secondItem="tCg-vd-eyB" secondAttribute="bottom" id="ywn-Ko-nAG"/>
                             <constraint firstItem="EuF-J3-iuA" firstAttribute="leading" secondItem="ss6-06-b7L" secondAttribute="leading" id="zEb-fM-ho5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="frontWaveformView" destination="tCg-vd-eyB" id="Ore-FW-7Wu"/>
                         <outlet property="waveformView" destination="EuF-J3-iuA" id="xkr-tA-thh"/>
                     </connections>
                 </viewController>

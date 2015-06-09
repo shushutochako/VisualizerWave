@@ -9,18 +9,39 @@
 import UIKit
 
 class WaveformView: UIView {
-    
-  var numberOfWaves:Int = 1
+  
+  /*
+  * 波の色
+  */
   var waveColor = UIColor()
-  var primaryWaveLineWidth: CGFloat = 3.0
-  var secondaryWaveLineWidth: CGFloat = 1.0
+  
+  /*
+  * 振幅の低限
+  */
   var idleAmplitude: CGFloat = 0.01
+  
+  /*
+  * 周波数
+  */
   var frequency: CGFloat = 1.5
-  var amplitude: CGFloat = 1.0
+  
+  /*
+  * 描画周期
+  */
   var density: CGFloat = 5.0
+  
+  /*
+  * 位相変位
+  */
   var phaseShift: CGFloat = -0.15
   
-  var phase: CGFloat = 0
+  /*
+  * 振幅の掛け率
+  */
+  var amplitudeRate: CGFloat = 1.0
+  
+  private var phase: CGFloat = 0
+  private var amplitude: CGFloat = 1.0
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -37,52 +58,66 @@ class WaveformView: UIView {
   }
   
   func update(level: CGFloat) {
+    // オーバーフローしないように適当なところでクリアする
+    if self.phase < -200 {
+      self.phase = 0
+    }
     self.phase += self.phaseShift
-    self.amplitude = fmax(level, self.idleAmplitude);
+    
+    if level < self.idleAmplitude {
+      self.amplitude = self.idleAmplitude
+    } else {
+      self.amplitude = level * self.amplitudeRate
+    }
     self.setNeedsDisplay()
   }
   
   override func drawRect(rect: CGRect) {
-    let context = UIGraphicsGetCurrentContext()
+    var context = UIGraphicsGetCurrentContext()
     CGContextClearRect(context, self.bounds)
     
     self.backgroundColor?.set()
     CGContextFillRect(context, rect)
     
-    for var i = 0; i < self.numberOfWaves; i++ {
-      let context = UIGraphicsGetCurrentContext()
+    context = UIGraphicsGetCurrentContext()
+    
+    var halfHeight = CGRectGetHeight(self.bounds) / 2
+    var width = CGRectGetWidth(self.bounds)
+    var mid = width / 2
+    
+    let maxAmplitude = halfHeight
+    self.waveColor.colorWithAlphaComponent(CGColorGetAlpha(self.waveColor.CGColor)).set()
+    
+    let drawingWidth = width + self.density
+    for var x: CGFloat = 0; x < drawingWidth; x += self.density {
+      // 波に拡大率(波ごとにブレを発生させる。viewの真ん中で波が最大になるように設定)
+      let scaling: CGFloat = -pow(1 / mid * (x - mid), 2) + 1
+      // 波の振幅
+      let amplitude = scaling * maxAmplitude * self.amplitude
+      // 波を繰り返す周期
+      let cycle = Float(CGFloat(2 * M_PI) * (x / width) * self.frequency + self.phase)
       
-      CGContextSetLineWidth(context, (i == 0 ? self.primaryWaveLineWidth : self.secondaryWaveLineWidth))
-
-      var halfHeight = CGRectGetHeight(self.bounds) / 2
-      var width = CGRectGetWidth(self.bounds)
-      var mid = width / 2
-      
-      let maxAmplitude = halfHeight - 4.0
-      
-      let progress = 1 - CGFloat(i) / CGFloat(self.numberOfWaves)
-      let normedAmplitude = (1.5 * progress - 0.5) * self.amplitude
-      
-      let multiplier = min(1.0, (progress / 3.0 * 2.0) + (1.0 / 3.0))
-      self.waveColor.colorWithAlphaComponent(multiplier * CGColorGetAlpha(self.waveColor.CGColor)).set()
-
-      for var x: CGFloat = 0; x < (width + self.density); x += self.density {
-        let scaling: CGFloat = -pow(1 / mid * (x - mid), 2) + 1
-        let a = scaling * maxAmplitude * normedAmplitude
-        let b = sinf(Float(CGFloat(2 * M_PI) * (x / width) * self.frequency + self.phase))
-        let y = a * CGFloat(b) + halfHeight
-        
-        if x == 0 {
-          CGContextMoveToPoint(context, x, y);
-          CGContextAddLineToPoint(context, self.frame.size.width + 200, y);
-          CGContextAddLineToPoint(context, 0, 500);
-        } else {
-          CGContextAddLineToPoint(context, x, y);
-        }
+      let y = amplitude * CGFloat(sinf(cycle)) + halfHeight
+      if x == 0 {
+        // 始点
+        CGContextMoveToPoint(context, x, y);
+      } else {
+        // 波を描画する為のポイント追加
+        CGContextAddLineToPoint(context, x, y);
       }
-      //CGContextStrokePath(context);
-      CGContextFillPath(context);
+      
     }
+    // 塗り潰し範囲確定の為のポイント追加
+    CGContextAddLineToPoint(context, self.frame.size.width, halfHeight)
+    CGContextAddLineToPoint(context, self.frame.size.width, self.frame.size.height)
+    CGContextAddLineToPoint(context, 0, self.frame.size.height)
+    CGContextAddLineToPoint(context, 0, halfHeight)
+    
+    CGContextFillPath(context);
+  }
+  
+  private func getYPoint() {
+    
   }
 
   
