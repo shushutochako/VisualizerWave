@@ -20,5 +20,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-
+# CocoaPods
+Pods/
 

@@ -30,6 +30,12 @@ class VisualizerViewController: UIViewController {
     
     self.start()
   }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.audioInput.stopInput()
+  }
+  
   func start() {
     self.audioInput.startInput()
   }
