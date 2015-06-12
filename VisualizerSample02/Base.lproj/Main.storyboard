@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -43,17 +44,17 @@
                                     <segue destination="Hg6-0A-Qt1" kind="show" id="YJL-2Q-lP5"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCN-sc-ClT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCN-sc-ClT">
                                 <rect key="frame" x="50" y="274" width="500" height="50"/>
                                 <color key="backgroundColor" red="0.66585648149999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6OI-UQ-qfT"/>
                                 </constraints>
-                                <state key="normal" title="Bar">
+                                <state key="normal" title="Analyzer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OMa-NQ-UDi" kind="show" id="2bL-JY-7W4"/>
+                                    <segue destination="Lnq-WZ-5Tj" kind="show" id="In5-9V-PEH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,6 +106,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCZ-1c-sHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1748" y="616"/>
+        </scene>
+        <!--Analyzer View Controller-->
+        <scene sceneID="qzg-xi-qw2">
+            <objects>
+                <viewController id="Lnq-WZ-5Tj" customClass="AnalyzerViewController" customModule="VisualizerSample02" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2g-Kd-gWW"/>
+                        <viewControllerLayoutGuide type="bottom" id="xY8-w9-USd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMg-NR-j8f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iun-UK-fpx" customClass="EZAudioPlot">
+                                <rect key="frame" x="0.0" y="400" width="300" height="100"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="YzL-pQ-Ojr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-2f-3uF" customClass="EZAudioPlot">
+                                <rect key="frame" x="0.0" y="500" width="300" height="100"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="veg-mm-h1b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Iun-UK-fpx" firstAttribute="leading" secondItem="bMg-NR-j8f" secondAttribute="leading" id="BVY-Gi-8Rq"/>
+                            <constraint firstItem="rU7-2f-3uF" firstAttribute="width" secondItem="bMg-NR-j8f" secondAttribute="width" multiplier="0.5" id="Ced-yJ-nZc"/>
+                            <constraint firstItem="xY8-w9-USd" firstAttribute="top" secondItem="rU7-2f-3uF" secondAttribute="bottom" id="KeK-Ch-KGd"/>
+                            <constraint firstItem="rU7-2f-3uF" firstAttribute="top" secondItem="Iun-UK-fpx" secondAttribute="bottom" id="iUv-nW-yHX"/>
+                            <constraint firstItem="rU7-2f-3uF" firstAttribute="leading" secondItem="bMg-NR-j8f" secondAttribute="leading" id="j1B-zJ-zlB"/>
+                            <constraint firstItem="Iun-UK-fpx" firstAttribute="width" secondItem="bMg-NR-j8f" secondAttribute="width" multiplier="0.5" id="lPp-3j-pD9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="rU7-2f-3uF" id="h5s-LH-1Tr"/>
+                        <outlet property="audioPlot2" destination="Iun-UK-fpx" id="3S9-pG-DpR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXG-Hg-e3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="1402"/>
         </scene>
         <!--Visualizer View Controller-->
         <scene sceneID="zwe-3F-kjh">
