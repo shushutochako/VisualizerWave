@@ -1,14 +1,10 @@
 PODS:
   - EZAudio (0.0.6)
-  - ZLHistogramAudioPlot (0.0.1):
-    - EZAudio
 
 DEPENDENCIES:
   - EZAudio (~> 0.0.6)
-  - ZLHistogramAudioPlot
 
 SPEC CHECKSUMS:
   EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
-  ZLHistogramAudioPlot: aed6ae919a9b99132a7a27f8391932074597875e
 
 COCOAPODS: 0.37.2

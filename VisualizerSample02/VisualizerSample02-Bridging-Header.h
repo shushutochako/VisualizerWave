@@ -6,5 +6,10 @@
 //  Copyright (c) 2015年 増島 亘康. All rights reserved.
 //
 
+#ifdef __OBJC__
+
 #import "SCSiriWaveformView.h"
 #import "SCViewController.h"
+#import "EZAudio.h"
+
+#endif

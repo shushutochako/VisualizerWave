@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61FC64CEF80B57012B4BD360 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEAD7B109038ADD77260FAD /* libPods.a */; };
 		AE19E9451B256436001D1B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19E9441B256436001D1B7D /* AppDelegate.swift */; };
 		AE19E9471B256436001D1B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19E9461B256436001D1B7D /* ViewController.swift */; };
 		AE19E94A1B256436001D1B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE19E9481B256436001D1B7D /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 		AE19E9681B25645C001D1B7D /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19E9671B25645C001D1B7D /* SCSiriWaveformView.m */; };
 		AE19E96B1B25646E001D1B7D /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE19E96A1B25646E001D1B7D /* SCViewController.m */; };
 		AE19E96D1B2566AF001D1B7D /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19E96C1B2566AF001D1B7D /* WaveformView.swift */; };
+		AE1D48911B29A134006DFABB /* AnalyzerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D48901B29A134006DFABB /* AnalyzerViewController.swift */; };
+		AE1D48931B29A333006DFABB /* MicrophoneInputConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */; };
 		AE3457D11B25958C00808336 /* AudioInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3457D01B25958C00808336 /* AudioInput.swift */; };
 		AE3457D31B2595CD00808336 /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3457D21B2595CD00808336 /* VisualizerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BEAD7B109038ADD77260FAD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		75B38E1F93CEF64DF2A3326A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AE0210391B26BED8002CCFC9 /* VisualizerSample02-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VisualizerSample02-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE19E93F1B256436001D1B7D /* VisualizerSample02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualizerSample02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE19E9431B256436001D1B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,8 +52,11 @@
 		AE19E9691B25646E001D1B7D /* SCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCViewController.h; path = Waveform/SCViewController.h; sourceTree = "<group>"; };
 		AE19E96A1B25646E001D1B7D /* SCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCViewController.m; path = Waveform/SCViewController.m; sourceTree = "<group>"; };
 		AE19E96C1B2566AF001D1B7D /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaveformView.swift; path = Waveform/WaveformView.swift; sourceTree = "<group>"; };
+		AE1D48901B29A134006DFABB /* AnalyzerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzerViewController.swift; sourceTree = "<group>"; };
+		AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneInputConverter.swift; sourceTree = "<group>"; };
 		AE3457D01B25958C00808336 /* AudioInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioInput.swift; path = Waveform/AudioInput.swift; sourceTree = "<group>"; };
 		AE3457D21B2595CD00808336 /* VisualizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualizerViewController.swift; path = Waveform/VisualizerViewController.swift; sourceTree = "<group>"; };
+		ED51A24BBF4A2FDFC4320126 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FC64CEF80B57012B4BD360 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1637DA281B030ACB5A62B717 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED51A24BBF4A2FDFC4320126 /* Pods.debug.xcconfig */,
+				75B38E1F93CEF64DF2A3326A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AE19E9361B256436001D1B7D = {
 			isa = PBXGroup;
 			children = (
 				AE19E9411B256436001D1B7D /* VisualizerSample02 */,
 				AE19E9571B256436001D1B7D /* VisualizerSample02Tests */,
 				AE19E9401B256436001D1B7D /* Products */,
+				1637DA281B030ACB5A62B717 /* Pods */,
+				D30A73472380CD85F528E2BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +110,7 @@
 		AE19E9411B256436001D1B7D /* VisualizerSample02 */ = {
 			isa = PBXGroup;
 			children = (
+				AE1D488F1B29A104006DFABB /* Analyzer */,
 				AE19E9641B256446001D1B7D /* Waveform */,
 				AE19E9441B256436001D1B7D /* AppDelegate.swift */,
 				AE19E9461B256436001D1B7D /* ViewController.swift */,
@@ -141,6 +162,23 @@
 			name = Waveform;
 			sourceTree = "<group>";
 		};
+		AE1D488F1B29A104006DFABB /* Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				AE1D48901B29A134006DFABB /* AnalyzerViewController.swift */,
+				AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */,
+			);
+			path = Analyzer;
+			sourceTree = "<group>";
+		};
+		D30A73472380CD85F528E2BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BEAD7B109038ADD77260FAD /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE19E95E1B256436001D1B7D /* Build configuration list for PBXNativeTarget "VisualizerSample02" */;
 			buildPhases = (
+				C29311E2FBE65781D5E4A242 /* Check Pods Manifest.lock */,
 				AE19E93B1B256436001D1B7D /* Sources */,
 				AE19E93C1B256436001D1B7D /* Frameworks */,
 				AE19E93D1B256436001D1B7D /* Resources */,
+				3AEF274CBB39A75D3550103B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +276,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AEF274CBB39A75D3550103B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C29311E2FBE65781D5E4A242 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE19E93B1B256436001D1B7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -245,6 +318,8 @@
 				AE3457D31B2595CD00808336 /* VisualizerViewController.swift in Sources */,
 				AE19E9471B256436001D1B7D /* ViewController.swift in Sources */,
 				AE19E9451B256436001D1B7D /* AppDelegate.swift in Sources */,
+				AE1D48911B29A134006DFABB /* AnalyzerViewController.swift in Sources */,
+				AE1D48931B29A333006DFABB /* MicrophoneInputConverter.swift in Sources */,
 				AE19E96D1B2566AF001D1B7D /* WaveformView.swift in Sources */,
 				AE19E96B1B25646E001D1B7D /* SCViewController.m in Sources */,
 				AE19E9681B25645C001D1B7D /* SCSiriWaveformView.m in Sources */,
@@ -374,6 +449,7 @@
 		};
 		AE19E95F1B256436001D1B7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED51A24BBF4A2FDFC4320126 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -382,13 +458,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/b06064/Documents/Program/00_WorkSpace_iOS/VisualizerWave/VisualizerSample02/VisualizerSample02-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AE19E9601B256436001D1B7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75B38E1F93CEF64DF2A3326A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -397,7 +474,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/b06064/Documents/Program/00_WorkSpace_iOS/VisualizerWave/VisualizerSample02/VisualizerSample02-Bridging-Header.h";
 			};
 			name = Release;
 		};
