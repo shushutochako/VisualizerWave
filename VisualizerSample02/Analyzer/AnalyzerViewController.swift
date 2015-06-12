@@ -31,6 +31,11 @@ class AnalyzerViewController: ViewController {
     MicrophoneInputConverter.sharedInstance.startFetchingAudio()
   }
   
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    MicrophoneInputConverter.sharedInstance.stopFetchingAudio()
+  }
+  
   func dispatch_async_main(block: () -> ()) {
     dispatch_async(dispatch_get_main_queue(), block)
   }
@@ -41,7 +46,6 @@ class AnalyzerViewController: ViewController {
     }
   }
 }
-
 
 extension AnalyzerViewController : MicrophoneInputConverterDelegate {
   func onInputMicrophoneDate(buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, bufferSize: UInt32) {
