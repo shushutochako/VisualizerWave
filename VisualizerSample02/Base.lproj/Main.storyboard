@@ -102,45 +102,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-BA-1XE" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
-                                <rect key="frame" x="50" y="64" width="20" height="536"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEJ-1o-7ER" customClass="BlockVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="jsw-VQ-dUK"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-b3-Hhe" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
-                                <rect key="frame" x="25" y="64" width="20" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="N76-5O-FjF"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzV-aS-rdb" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="20" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="teh-aK-sCj"/>
+                                    <constraint firstAttribute="height" constant="200" id="fhy-j4-Sf7"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UMl-b3-Hhe" firstAttribute="top" secondItem="jQF-5J-nRZ" secondAttribute="bottom" id="3qf-f5-n5X"/>
-                            <constraint firstItem="UMl-b3-Hhe" firstAttribute="leading" secondItem="tzV-aS-rdb" secondAttribute="trailing" constant="5" id="Cjp-bd-6y3"/>
-                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="tzV-aS-rdb" secondAttribute="bottom" id="IuA-Xj-fAB"/>
-                            <constraint firstItem="tzV-aS-rdb" firstAttribute="leading" secondItem="Ipx-sj-JKA" secondAttribute="leading" id="Lgj-fY-Nhd"/>
-                            <constraint firstItem="tzV-aS-rdb" firstAttribute="top" secondItem="Ipx-sj-JKA" secondAttribute="top" id="UNZ-Jp-FhL"/>
-                            <constraint firstItem="tgt-BA-1XE" firstAttribute="top" secondItem="jQF-5J-nRZ" secondAttribute="bottom" id="WhB-7B-4lB"/>
-                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="tgt-BA-1XE" secondAttribute="bottom" id="oO7-CY-9su"/>
-                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="UMl-b3-Hhe" secondAttribute="bottom" id="t23-IQ-OIf"/>
-                            <constraint firstItem="tgt-BA-1XE" firstAttribute="leading" secondItem="UMl-b3-Hhe" secondAttribute="trailing" constant="5" id="ty8-bf-CGp"/>
+                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="LEJ-1o-7ER" secondAttribute="bottom" id="Bwq-7B-a2O"/>
+                            <constraint firstAttribute="trailing" secondItem="LEJ-1o-7ER" secondAttribute="trailing" id="Cd9-1F-f05"/>
+                            <constraint firstItem="LEJ-1o-7ER" firstAttribute="leading" secondItem="Ipx-sj-JKA" secondAttribute="leading" id="bIu-1s-xfK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bitView" destination="tzV-aS-rdb" id="5Uy-7R-9pA"/>
-                        <outlet property="bitView02" destination="UMl-b3-Hhe" id="Og6-LE-j7v"/>
-                        <outlet property="bitView03" destination="tgt-BA-1XE" id="lBJ-92-6Fg"/>
+                        <outlet property="blockVisiualizerView" destination="LEJ-1o-7ER" id="5fd-PI-eiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7df-YJ-bVD" userLabel="First Responder" sceneMemberID="firstResponder"/>

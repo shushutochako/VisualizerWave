@@ -1,5 +1,5 @@
 //
-//  BitVisualizerView.swift
+//  BlockPlotView.swift
 //  VisualizerSample02
 //
 //  Created by 増島 亘康 on 2015/06/22.
@@ -8,19 +8,24 @@
 
 import UIKit
 
-class BitVisualizerView: UIView {
+class BlockPlotView: UIView {
   
   var meters: Int = 0
 
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+
+  required init(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+  }
+  
   func updateBit(meters: Int) {
     self.meters = meters
     self.setNeedsDisplay()
   }
   
   override func drawRect(rect: CGRect) {
-    // TODO:乱数
-    var blockCount:Int = 4
-    
     var context = UIGraphicsGetCurrentContext()
     CGContextClearRect(context, self.bounds)
     self.backgroundColor?.set()
@@ -29,7 +34,7 @@ class BitVisualizerView: UIView {
     context = UIGraphicsGetCurrentContext()
     UIColor.blueColor().colorWithAlphaComponent(CGColorGetAlpha(UIColor.blueColor().CGColor)).set()
     
-    var padding:CGFloat = 10
+    var padding:CGFloat = 1
     var startY:CGFloat = self.frame.height
     
     for var i=0; i<self.meters; i++ {
