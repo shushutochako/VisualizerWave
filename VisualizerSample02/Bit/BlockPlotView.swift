@@ -12,6 +12,7 @@ class BlockPlotView: UIView {
   
   var meters: Int = 0
   var padding: CGFloat = 0
+  var blockColor = UIColor.blackColor()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -33,7 +34,7 @@ class BlockPlotView: UIView {
     CGContextFillRect(context, rect)
     
     context = UIGraphicsGetCurrentContext()
-    UIColor.blueColor().colorWithAlphaComponent(CGColorGetAlpha(UIColor.blueColor().CGColor)).set()
+    UIColor.blueColor().colorWithAlphaComponent(CGColorGetAlpha(self.blockColor.CGColor)).set()
     
     var padding:CGFloat = 1
     var startY:CGFloat = self.frame.height
