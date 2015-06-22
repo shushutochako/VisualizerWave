@@ -11,6 +11,7 @@ import UIKit
 class BlockPlotView: UIView {
   
   var meters: Int = 0
+  var padding: CGFloat = 0
 
   override init(frame: CGRect) {
     super.init(frame: frame)

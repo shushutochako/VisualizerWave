@@ -13,29 +13,18 @@ class BitVisualizerViewController: UIViewController {
   @IBOutlet weak var blockVisiualizerView: BlockVisualizerView!
   
   var timing:Int = 0
+  var isStart = false;
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    let displaylink = CADisplayLink(target: self, selector: "updateMeters")
-//    displaylink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
-    self.blockVisiualizerView.create()
-    //self.blockVisiualizerView.updateHeight()
-//    self.bitView.updateBit(0)
-//    self.bitView02.updateBit(0)
-//    self.bitView03.updateBit(0)
   }
   
-  func updateMeters() {
-    if self.timing == 7 {
-//      var meters1 = arc4random() % 7 + 1
-//      var meters2 = arc4random() % 7 + 1
-//      var meters3 = arc4random() % 7 + 1
-//      self.bitView.updateBit(Int(meters1))
-//      self.bitView02.updateBit(Int(meters2))
-//      self.bitView03.updateBit(Int(meters3))
-//      self.timing = 0
-      self.blockVisiualizerView.updateHeight()
+  @IBAction func tapButton(sender: AnyObject) {
+    if !self.isStart {
+      self.blockVisiualizerView.startAnimation()
+    } else {
+      self.blockVisiualizerView.stopAnimation()
     }
-    self.timing++
+    self.isStart = !self.isStart
   }
 }

@@ -109,12 +109,28 @@
                                     <constraint firstAttribute="height" constant="200" id="fhy-j4-Sf7"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLD-px-66V">
+                                <rect key="frame" x="50" y="164" width="500" height="50"/>
+                                <color key="backgroundColor" red="0.65104166669999997" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zGP-pd-lz0"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="cdi-5u-QgA" eventType="touchUpInside" id="7GL-ot-cba"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="LEJ-1o-7ER" secondAttribute="bottom" id="Bwq-7B-a2O"/>
+                            <constraint firstItem="mLD-px-66V" firstAttribute="top" secondItem="jQF-5J-nRZ" secondAttribute="bottom" constant="100" id="CEM-Xd-E6a"/>
                             <constraint firstAttribute="trailing" secondItem="LEJ-1o-7ER" secondAttribute="trailing" id="Cd9-1F-f05"/>
                             <constraint firstItem="LEJ-1o-7ER" firstAttribute="leading" secondItem="Ipx-sj-JKA" secondAttribute="leading" id="bIu-1s-xfK"/>
+                            <constraint firstAttribute="trailing" secondItem="mLD-px-66V" secondAttribute="trailing" constant="50" id="nUi-0v-A1B"/>
+                            <constraint firstItem="mLD-px-66V" firstAttribute="leading" secondItem="Ipx-sj-JKA" secondAttribute="leading" constant="50" id="psD-Zy-KCy"/>
                         </constraints>
                     </view>
                     <connections>
