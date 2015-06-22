@@ -57,17 +57,30 @@
                                     <segue destination="Lnq-WZ-5Tj" kind="show" id="In5-9V-PEH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiR-or-agN">
+                                <rect key="frame" x="50" y="354" width="500" height="30"/>
+                                <color key="backgroundColor" red="0.65104166669999997" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Bit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cdi-5u-QgA" kind="show" id="O4g-iw-lY3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hCN-sc-ClT" secondAttribute="trailing" constant="50" id="6Ky-NU-q5c"/>
                             <constraint firstItem="hCN-sc-ClT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="50" id="S4w-0d-bzc"/>
+                            <constraint firstItem="RiR-or-agN" firstAttribute="top" secondItem="hCN-sc-ClT" secondAttribute="bottom" constant="30" id="Vza-ox-RLo"/>
                             <constraint firstAttribute="trailing" secondItem="uZ6-bo-igT" secondAttribute="trailing" constant="50" id="afM-ld-VCQ"/>
                             <constraint firstItem="Rcd-rP-yxv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="e3V-jo-FsS"/>
                             <constraint firstAttribute="trailing" secondItem="Rcd-rP-yxv" secondAttribute="trailing" constant="50" id="eq4-ZE-wzI"/>
                             <constraint firstItem="hCN-sc-ClT" firstAttribute="top" secondItem="uZ6-bo-igT" secondAttribute="bottom" constant="30" id="hbp-vb-OjS"/>
                             <constraint firstItem="uZ6-bo-igT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="50" id="kl0-mt-IFD"/>
                             <constraint firstItem="uZ6-bo-igT" firstAttribute="top" secondItem="Rcd-rP-yxv" secondAttribute="bottom" constant="30" id="lVi-Ti-0Oj"/>
+                            <constraint firstItem="RiR-or-agN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="50" id="qiC-sd-dVU"/>
+                            <constraint firstAttribute="trailing" secondItem="RiR-or-agN" secondAttribute="trailing" constant="50" id="qmn-O5-ozQ"/>
                             <constraint firstItem="Rcd-rP-yxv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="50" id="xW6-pu-b2q"/>
                         </constraints>
                     </view>
@@ -76,6 +89,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077" y="339"/>
+        </scene>
+        <!--Bit Visualizer View Controller-->
+        <scene sceneID="eLb-GL-zbI">
+            <objects>
+                <viewController id="cdi-5u-QgA" customClass="BitVisualizerViewController" customModule="VisualizerSample02" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jQF-5J-nRZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="E5C-nV-bLU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ipx-sj-JKA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgt-BA-1XE" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="50" y="64" width="20" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="jsw-VQ-dUK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-b3-Hhe" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="25" y="64" width="20" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="N76-5O-FjF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzV-aS-rdb" customClass="BitVisualizerView" customModule="VisualizerSample02" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="teh-aK-sCj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UMl-b3-Hhe" firstAttribute="top" secondItem="jQF-5J-nRZ" secondAttribute="bottom" id="3qf-f5-n5X"/>
+                            <constraint firstItem="UMl-b3-Hhe" firstAttribute="leading" secondItem="tzV-aS-rdb" secondAttribute="trailing" constant="5" id="Cjp-bd-6y3"/>
+                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="tzV-aS-rdb" secondAttribute="bottom" id="IuA-Xj-fAB"/>
+                            <constraint firstItem="tzV-aS-rdb" firstAttribute="leading" secondItem="Ipx-sj-JKA" secondAttribute="leading" id="Lgj-fY-Nhd"/>
+                            <constraint firstItem="tzV-aS-rdb" firstAttribute="top" secondItem="Ipx-sj-JKA" secondAttribute="top" id="UNZ-Jp-FhL"/>
+                            <constraint firstItem="tgt-BA-1XE" firstAttribute="top" secondItem="jQF-5J-nRZ" secondAttribute="bottom" id="WhB-7B-4lB"/>
+                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="tgt-BA-1XE" secondAttribute="bottom" id="oO7-CY-9su"/>
+                            <constraint firstItem="E5C-nV-bLU" firstAttribute="top" secondItem="UMl-b3-Hhe" secondAttribute="bottom" id="t23-IQ-OIf"/>
+                            <constraint firstItem="tgt-BA-1XE" firstAttribute="leading" secondItem="UMl-b3-Hhe" secondAttribute="trailing" constant="5" id="ty8-bf-CGp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bitView" destination="tzV-aS-rdb" id="5Uy-7R-9pA"/>
+                        <outlet property="bitView02" destination="UMl-b3-Hhe" id="Og6-LE-j7v"/>
+                        <outlet property="bitView03" destination="tgt-BA-1XE" id="lBJ-92-6Fg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7df-YJ-bVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="1017"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="jqw-uM-cW9">

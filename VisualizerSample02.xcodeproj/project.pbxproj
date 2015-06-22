@@ -21,6 +21,8 @@
 		AE1D48931B29A333006DFABB /* MicrophoneInputConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */; };
 		AE3457D11B25958C00808336 /* AudioInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3457D01B25958C00808336 /* AudioInput.swift */; };
 		AE3457D31B2595CD00808336 /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3457D21B2595CD00808336 /* VisualizerViewController.swift */; };
+		AE472D0D1B37E10700A61B92 /* BitVisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE472D0C1B37E10700A61B92 /* BitVisualizerViewController.swift */; };
+		AE472D0F1B37E15100A61B92 /* BitVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE472D0E1B37E15100A61B92 /* BitVisualizerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneInputConverter.swift; sourceTree = "<group>"; };
 		AE3457D01B25958C00808336 /* AudioInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioInput.swift; path = Waveform/AudioInput.swift; sourceTree = "<group>"; };
 		AE3457D21B2595CD00808336 /* VisualizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualizerViewController.swift; path = Waveform/VisualizerViewController.swift; sourceTree = "<group>"; };
+		AE472D0C1B37E10700A61B92 /* BitVisualizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitVisualizerViewController.swift; path = Bit/BitVisualizerViewController.swift; sourceTree = "<group>"; };
+		AE472D0E1B37E15100A61B92 /* BitVisualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitVisualizerView.swift; path = Bit/BitVisualizerView.swift; sourceTree = "<group>"; };
 		ED51A24BBF4A2FDFC4320126 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,7 @@
 		AE19E9411B256436001D1B7D /* VisualizerSample02 */ = {
 			isa = PBXGroup;
 			children = (
+				AE472D0B1B37E0BB00A61B92 /* Bit */,
 				AE1D488F1B29A104006DFABB /* Analyzer */,
 				AE19E9641B256446001D1B7D /* Waveform */,
 				AE19E9441B256436001D1B7D /* AppDelegate.swift */,
@@ -169,6 +174,15 @@
 				AE1D48921B29A333006DFABB /* MicrophoneInputConverter.swift */,
 			);
 			path = Analyzer;
+			sourceTree = "<group>";
+		};
+		AE472D0B1B37E0BB00A61B92 /* Bit */ = {
+			isa = PBXGroup;
+			children = (
+				AE472D0C1B37E10700A61B92 /* BitVisualizerViewController.swift */,
+				AE472D0E1B37E15100A61B92 /* BitVisualizerView.swift */,
+			);
+			name = Bit;
 			sourceTree = "<group>";
 		};
 		D30A73472380CD85F528E2BC /* Frameworks */ = {
@@ -315,11 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE3457D11B25958C00808336 /* AudioInput.swift in Sources */,
+				AE472D0F1B37E15100A61B92 /* BitVisualizerView.swift in Sources */,
 				AE3457D31B2595CD00808336 /* VisualizerViewController.swift in Sources */,
 				AE19E9471B256436001D1B7D /* ViewController.swift in Sources */,
 				AE19E9451B256436001D1B7D /* AppDelegate.swift in Sources */,
 				AE1D48911B29A134006DFABB /* AnalyzerViewController.swift in Sources */,
 				AE1D48931B29A333006DFABB /* MicrophoneInputConverter.swift in Sources */,
+				AE472D0D1B37E10700A61B92 /* BitVisualizerViewController.swift in Sources */,
 				AE19E96D1B2566AF001D1B7D /* WaveformView.swift in Sources */,
 				AE19E96B1B25646E001D1B7D /* SCViewController.m in Sources */,
 				AE19E9681B25645C001D1B7D /* SCSiriWaveformView.m in Sources */,
